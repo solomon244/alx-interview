@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""Write a method that determines if a given data set represents a valid UTF-8 encoding
+"""Write a method determines a given data set represents a valid UTF-8 encoding
 """
 
 
 def validUTF8(data):
-    """Checks if a list of integers are valid 
-    UTF-8 codepoints. 
+    """Checks if a list of integers are valid UTF-8 codepoints.
+    See
     """
     skip = 0
     n = len(data)
