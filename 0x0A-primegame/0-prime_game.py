@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" choosing a prime number from the set and removing number and its multiples from the set
+"""Prime game 
 """
 
 
@@ -10,17 +10,17 @@ def isWinner(x, nums):
         return None
     marias_wins, bens_wins = 0, 0
     # generate primes with a limit of the maximum number in nums
-    k = max(nums)
-    primes = [True for _ in range(1, k + 1, 1)]
+    n = max(nums)
+    primes = [True for _ in range(1, n + 1, 1)]
     primes[0] = False
     for i, is_prime in enumerate(primes, 1):
         if i == 1 or not is_prime:
             continue
-        for j in range(i + i, k + 1, i):
+        for j in range(i + i, n + 1, i):
             primes[j - 1] = False
-    # filter the number of primes less than k in nums for each round
-    for _, k in zip(range(x), nums):
-        primes_count = len(list(filter(lambda x: x, primes[0: k])))
+    # filter the number of primes less than n in nums for each round
+    for _, n in zip(range(x), nums):
+        primes_count = len(list(filter(lambda x: x, primes[0: n])))
         bens_wins += primes_count % 2 == 0
         marias_wins += primes_count % 2 == 1
     if marias_wins == bens_wins:
